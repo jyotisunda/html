@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic table</title>
+    <style>
+      h1 {
+        text-align: center;
+        font-size: 2rem;
+        color: aqua;
+        background-color: blueviolet;
+      }
+
+      #tbl {
+        background-color: blue;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Student Data</h1>
+    <form method="Post" name="sample">
+      <br />
+      Rollno:<input type="number" name="rollno" /> Name:<input
+        type="text"
+        name="name"
+      />
+      <br /><br />
+      <input
+        type="button"
+        name="add"
+        value="AddData"
+        onclick="addStudent();"
+      /><br />
+      <br />
+
+      <table id="tbl" class="table" border="2">
+        <thead>
+          <th>Rollno</th>
+          <th>Name</th>
+        </thead>
+
+        <tbody></tbody>
+      </table>
+    </form>
+
+    <script type="text/javascript">
+      function addStudent() {
+        var rollno = document.sample.rollno.value;
+        var name = document.sample.name.value;
+
+        var tr = document.createElement("tr");
+        var td1 = tr.appendChild(document.createElement("td"));
+        var td2 = tr.appendChild(document.createElement("td"));
+
+        td1.innerHTML = rollno;
+        td2.innerHTML = name;
+
+        document.getElementById("tbl").appendChild(tr);
+      }
+    </script>
+  </body>
+</html>

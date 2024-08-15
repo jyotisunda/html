@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic table</title>
+  </head>
+  <body>
+    <h1>Student data</h1>
+
+    <form>
+      <label for="fname">First name:</label><br />
+      <br />
+      <input type="text" id="fname" name="fname" /><br /><br />
+      <label for="lname">Last name:</label><br /><br />
+      <input type="text" id="lname" name="lname" /><br />
+      <label for="username">Username:</label><br /><br />
+      <input type="text" id="username" name="username" /><br /><br />
+      <label for="pwd">Password:</label><br /><br />
+      <input type="password" id="pwd" name="pwd" /><br />
+
+      <input
+        type="button"
+        name="add"
+        value="Add Data"
+        onclick="addStudent();"
+      />
+      <hr />
+
+      <table id="tbl" class="table" border="1">
+        <thead></thead>
+      </table>
+    </form>
+  </body>
+</html>

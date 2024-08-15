@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Table</title>
+  </head>
+  <body>
+    <h2>Dynamic Table</h2>
+    <table id="dataTable" border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- New rows will be added here -->
+      </tbody>
+    </table>
+    <br />
+
+    <input type="text" id="name" placeholder="Name" />
+    <input type="number" id="age" placeholder="Age" />
+    <input type="text" id="country" placeholder="Country" />
+    <button onclick="addRow()">Add Row</button>
+
+    <script>
+      function addRow() {
+        // Get the table body
+        const table = document
+          .getElementById("dataTable")
+          .getElementsByTagName("tbody")[0];
+
+        // Create a new row
+        const newRow = table.insertRow();
+
+        // Insert cells and assign values
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        const cell3 = newRow.insertCell(2);
+
+        cell1.textContent = document.getElementById("name").value;
+        cell2.textContent = document.getElementById("age").value;
+        cell3.textContent = document.getElementById("country").value;
+
+        // Clear the input fields
+        document.getElementById("name").value = "";
+        document.getElementById("age").value = "";
+        document.getElementById("country").value = "";
+      }
+    </script>
+  </body>
+</html>
